@@ -1,89 +1,39 @@
 import React, { Component } from 'react';
-import Button from 'react-bootstrap/Button';
-import Carousel from 'react-bootstrap/Carousel'
 
-class List extends Component {
+class Blog extends Component {
 
-  state = {
-    list: [1, 254, 5, 4, 1, 456, 6, 9, 8, 4, 2, 5, 6, 3, 54, 54]
-  };
+    state = {
+        items: [1, 92, 3, 4, 5, 6, 7, 89, 9]
+    };
 
-  render () {
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <table className="table table-hover table-striped">
-              <tbody>
-              {this.state.list.map(function(item,index){
-                return(
-                  <tr key={index}>
-                    <td>{index}</td>
-                    <td>{item}</td>
-                    <td>Consectetur.</td>
-                    <td>Nobis?</td>
-                  </tr>
-                );
-              })}
-              </tbody>
+    render () {
+        return (
+            <div>
 
-            </table>
-            <Button variant="primary" block={true} >Click me!</Button>
-          </div>
-        </div>
+                <div className="container mt-5">
+                    <div className="row">
+                        {this.state.items.map(function (item,index) {
+                            return (
+                                <div className="col-md-4" key={index}>
+                                    <div className="card mb-4">
+                                        <img src="https://images.unsplash.com/photo-1476950648868-16c7dca9499c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                                             className="card-img-top" alt="..."/>
+                                        <div className="card-body">
+                                            <p className="card-text">Some quick example text to build on the card title
+                                                and
+                                                make up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
 
 
-        <div className="row">
-
-          <div className="col-12">
-
-
-            <Carousel>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src="https://www.kerrisdalepharmacy.com/wp/wp-content/uploads/2019/05/flowers-1600x500-1024x320.jpg"
-                  alt="First slide"
-                />
-                <Carousel.Caption>
-                  <h3>First slide label</h3>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src="https://www.kerrisdalepharmacy.com/wp/wp-content/uploads/2019/05/flowers-1600x500-1024x320.jpg"
-                  alt="Third slide"
-                />
-
-                <Carousel.Caption>
-                  <h3>Second slide label</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </Carousel.Caption>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src="https://www.kerrisdalepharmacy.com/wp/wp-content/uploads/2019/05/flowers-1600x500-1024x320.jpg"
-                  alt="Third slide"
-                />
-
-                <Carousel.Caption>
-                  <h3>Third slide label</h3>
-                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </Carousel.Caption>
-              </Carousel.Item>
-            </Carousel>
-
-
-          </div>
-
-
-        </div>
-      </div>
-    );
-  }
+            </div>
+        );
+    }
 }
 
-export default List;
+export default Blog;
