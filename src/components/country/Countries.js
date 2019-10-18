@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
 import './Countries.css';
 import data from './data.json';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 class Countries extends Component {
 
   state = {
     countries: data,
+    id: 140,
   };
 
   render () {
+
     return (
       <section className="component-countries">
+
+
+        <Helmet>
+          <meta charSet="utf-8"/>
+          <title>country list</title>
+        </Helmet>
+
 
         <div className="container">
           <div className="row">
@@ -29,6 +40,7 @@ class Countries extends Component {
                     </div>
                     <div className="card-footer">
                       <small className="text-muted">Last updated 3 mins ago</small>
+                      <Link to={'/countries/' + index} className="btn btn-primary btn-sm">show</Link>
                     </div>
                   </div>
                 </div>
